@@ -5,19 +5,21 @@
 
 int main(int argc, char *argv[]) {
 	
-	char ch;
+	int num = 0; 	// 개수 0으로 초기화 
+	char str[100];
+	char c;
 	
-	printf("문자를 입력하십시오 : ");
-	scanf(" %c", &ch);
+	printf("Input a string : ");
 	
-	if ((ch >= 'A') && (ch <= 'Z'))
-		printf("대문자입니다.");
-	else if ((ch >= 'a') && (ch <= 'z'))
-		printf("소문자입니다.");
-	else if ((ch >= '0') && (ch <= '9')) 
-		printf("숫자입니다.");
-	else
-		printf("기타문자 입니다.");
-
+	while ((c = getchar()) != '\n')		// getchar() 는 scanf()를 쓰지 않음  
+	{
+		if ((c >= '0') && (c <= '9'))
+		{
+			num ++;
+		}
+	}
+	
+	printf("The number of digit is %d", num);
+		 
 	return 0;
 }
