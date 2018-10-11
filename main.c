@@ -6,16 +6,19 @@
 int main(int argc, char *argv[]) {
 	
 	int a;
+	int b; //절댓값을 저장하는 변수  
 	
 	printf("정수 하나를 입력하시오 : ");
 	scanf("%d", &a);
 	
 	if (a>0)
-		printf("양수입니다.");
+		b = a;
 	else if (a<0)
-		printf("음수입니다.");
+		b = -a;
 	else
-		printf("0 입니다.");
+		b = 0;
+		
+	printf("절댓값은 %d 입니다.", b);
 		 
 	return 0;
 }
