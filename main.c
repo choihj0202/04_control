@@ -5,21 +5,28 @@
 
 int main(int argc, char *argv[]) {
 	
-	int num = 0; 	// 개수 0으로 초기화 
-	char str[100];
-	char c;
+	int answer = 73;
+	int a, i = 1;
 	
-	printf("Input a string : ");
-	
-	while ((c = getchar()) != '\n')		// getchar() 는 scanf()를 쓰지 않음  
-	{
-		if ((c >= '0') && (c <= '9'))
+	do {
+		printf("Guess a number : ");
+		scanf("%d", &a);
+		
+		if (a < answer)
 		{
-			num ++;
+			printf("low!\n");
+			i++;
 		}
-	}
+		else if (a > answer)
+		{
+			printf("high!\n");
+			i++;
+		}
+		else
+			printf("Congratulation! trial : %d", i);
+	} while (a != answer);
 	
-	printf("The number of digit is %d", num);
-		 
+	
+	
 	return 0;
 }
